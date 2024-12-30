@@ -5,56 +5,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300&display=swap"
-    rel="stylesheet">
+        rel="stylesheet">
     <link rel="stylesheet" href="formscss.css">
     <title>Registration</title>
 </head>
 
 <body>
     <section>
-        <fieldset>
+        <fieldset class="styleAll marginAuto">
             <legend>User Information:</legend>
-            <form action="">
+            <form class="flex marginAuto" action="">
 
-                <label>First name: <br> <input class="inputsize input" type="text" name="fname" placeholder="  Please input your name" required
-                        maxlength="20"></label><br>
-                <label >Last name: <br> <input class="inputsize input" type="text" name="lname" placeholder="  Please input your last name" required
-                        maxlength="20"></label><br>
-                        <p>Gender</p>
-                <div id="gender">
-                    <label><br> <input class="input" type="radio" name="sex" value="fmale" checked>&nbsp;Female</label>
-                    <label><input class="input" type="radio" name="sex" value="male">&nbsp;Male</label>
-                </div><br>
+                <input class="inputsize input styleAll" type="text" name="fname" placeholder="  Please input your name"
+                    required maxlength="20">
 
 
-                <label>Birth date: <br> <input id="bdate" class="input" type="date" name="bdate" id="bdate" required></label><br>
+                <input class="inputsize input styleAll" type="email" id="mail" name="mail"
+                    placeholder="  yourmail@examples.com" required>
 
-                <label>Region: <br><select class="input radius" name="region" id="region">
-                        <option class="input" value="eu" selected>&nbsp;Please select your region&nbsp;&nbsp;</option>
+                <input class="inputsize input styleAll" type="password" id="pw" name="pw"
+                    placeholder="  Please input your password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                    title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters">
+
+                <div class="gender styleAll">
+                    <p>Gender</p>
+                    <div id="gender" class="flex">
+                        <label>Female <input class="input" type="radio" name="sex" value="fmale" checked></label>
+                        <label>Male <input class="input" type="radio" name="sex" value="male"></label>
+                    </div>
+                </div>
+
+
+                <div class="selectArea flex marginAuto">
+
+                    <div>
+                        <p>Birth Date</p>
+                        <input id="bdate" class="input styleAll marginZero" type="date" name="bdate" id="bdate"
+                            required>
+                    </div>
+
+
+                    <select class="input styleAll marginZero" name="region" id="region">
+                        <option class="input" value="eu" selected>&nbsp;Please select your region&nbsp;&nbsp;
+                        </option>
                         <option class="input" value="eu">EU</option>
                         <option class="input" value="usa">USA</option>
                         <option class="input" value="asia">ASIA</option>
                         <option class="input" value="africa">AFRICA</option>
                         <option class="input" value="others">OTHERS</option>
                     </select>
-                </label><br>
 
-                <label>Adress: <br> <textarea class="inputsize input radius" name="adress" id="adress" cols="30" rows="3" required
-                        placeholder="&nbsp;Please input your adress" maxlength="100" minlength="10"></textarea></label><br>
-
-                <label>Email: <br><input class="inputsize input" type="email" id="mail" name="mail" placeholder="  yourmail@examples.com"
-                        required></label><br>
-                <label>Password: <br> <input class="inputsize input" type="password" id="pw" name="pw" placeholder="  Please input your password" required
-                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                        title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"></label><br>
-
-                <label id="term"> <input id="terms" class="input" type="checkbox" checked>&nbsp;I agree to these&nbsp; <a href="#">Terms and
-                        Conditions</a>.</label><br>
                 </div>
-                <div id="button">
-                    <input id="mainbut" type="submit" value="Submit">
-                    <input type="reset" value="Reset">
+
+                <textarea class="inputsize input styleAll marginAuto" name="adress" id="adress" required
+                    placeholder="&nbsp;Please input your adress" maxlength="100" minlength="10"></textarea>
+
+                <div id="term" class="marginAuto">
+                    <input id="terms" class="input marginZero" type="checkbox" checked>&nbsp;I agree to
+                    these&nbsp;
+                    <a href="#">Terms and
+                        Conditions</a>
+
                 </div>
+
+                </div>
+                <div id="button" class="marginAuto">
+                    <input class="button" type="submit" value="Submit">
+                    <input class="button" type="reset" value="Reset">
+                </div>
+
+
+
             </form>
         </fieldset>
     </section>
